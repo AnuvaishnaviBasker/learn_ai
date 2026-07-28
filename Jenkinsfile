@@ -25,16 +25,5 @@ pipeline {
                 '''
             }
         }
-
-        stage('Publish HTML Report') {
-            steps {
-                publishHTML(target: [
-                    reportDir: 'reports',
-                    reportFiles: 'report.html',
-                    reportName: 'Pytest HTML Report',
-                    keepAll: true
-                ])
-            }
-        }
     }
 }
