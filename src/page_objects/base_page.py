@@ -1,3 +1,5 @@
+from typing import Optional
+
 from playwright.sync_api import Page
 
 
@@ -5,7 +7,7 @@ class BasePage:
     def __init__(self, page: Page):
         self.page = page
 
-    def open(self, path: str | None = None):
+    def open(self, path: Optional[str] = None):
         if path is None:
             self.page.goto('https://sauce-demo.myshopify.com', wait_until='domcontentloaded')
         else:
