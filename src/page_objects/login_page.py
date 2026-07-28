@@ -1,9 +1,11 @@
+from typing import Optional
+
 from src.locators.login_locators import LoginLocators
 from src.page_objects.base_page import BasePage
 
 
 class LoginPage(BasePage):
-    def open(self, path: str | None = None):
+    def open(self, path: Optional[str] = None):
         if path is None:
             self.page.goto('https://www.saucedemo.com')
         else:
